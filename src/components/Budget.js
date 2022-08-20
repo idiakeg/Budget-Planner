@@ -1,20 +1,23 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
+import Context from "../contexts/Context";
 
 const Budget = () => {
-	const [state, setState] = useState(null);
-	const handleState = () => {
-		setState((prevState) => !prevState);
+	const { eidtFlag, handleEditFlag, budget, handleBudgetValueChange } =
+		useContext(Context);
 
-		if (state) {
-			console.log("The changes were saved");
-		}
-	};
 	return (
 		<div className="budget-conatiner">
-			{state ? <input type="number" /> : <span>Budget: #4000</span>}
+			{eidtFlag ? (
+				<input
+					type="number"
+					// value={budget}
+					onChange={(e) => handleBudgetValueChange(e.target.value)}
+				/>
+			) : (
+				<span>Budget: ${budget}</span>
+			)}
 
-			<button onClick={handleState}>{!state ? "Edit" : "Save"}</button>
+			<button onClick={handleEditFlag}>{!eidtFlag ? "Edit" : "Save"}</button>
 		</div>
 	);
 };
