@@ -26,11 +26,6 @@ export const ContextProvider = ({ children }) => {
 	// EVENT HANDLERS
 	const handleEditFlag = () => {
 		dispatch({ type: "CHANGE_EDIT_FLAG" });
-
-		// condition to indicate that the save button was clicked
-		if (state.eidtFlag) {
-			// setBudgetValue("");
-		}
 	};
 
 	const handleDelete = (id) => {
@@ -47,12 +42,10 @@ export const ContextProvider = ({ children }) => {
 
 	// USE EFFECT DEFINITIONS
 	useEffect(() => {
-		// whenever there is a change in the value of the budget, reset the local storage to reflect this change
 		localStorage.setItem("my_budget_amount", JSON.stringify(state.budget));
 	}, [state.budget]);
 
 	useEffect(() => {
-		// whenever there is a change in the expense array, reset the local storage to reflect this change
 		localStorage.setItem("my_budget_expense", JSON.stringify(state.expenses));
 	}, [state.expenses]);
 

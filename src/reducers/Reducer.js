@@ -1,5 +1,3 @@
-import { nanoid } from "nanoid";
-
 // INITIAL STATE DEFINITION
 export const initialState = {
 	searchText: "",
