@@ -14,7 +14,7 @@ const AddExpenseForm = () => {
 		const expense = {
 			id: nanoid(),
 			name: formattedName,
-			cost: newExpense.cost,
+			cost: Number(newExpense.cost),
 		};
 		dispatch({ type: "ADD_EXPENSE", payload: expense });
 	};
