@@ -10,12 +10,15 @@ const ExpenseList = () => {
 
 	return (
 		<div className="expense-list-container">
-			{expenses &&
+			{expenses.length > 0 ? (
 				expenses
 					.filter(({ name }) => name.toLowerCase().includes(searchParameter))
 					.map(({ id, name, cost }) => (
 						<ExpenseItem id={id} name={name} cost={cost} key={id} />
-					))}
+					))
+			) : (
+				<div className="default-expense-data">No expense yet</div>
+			)}
 		</div>
 	);
 };

@@ -75,7 +75,7 @@ h2 {
 	margin: 0 1rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
 	.budget-details {
 		flex-direction: column;
 		gap: 1.5rem;
@@ -112,6 +112,13 @@ h2 {
 	border: 1px solid var(--border-color);
 	display: flex;
 	align-items: center;
+}
+
+.default-expense-data {
+	border: 1px solid var(--border-color);
+	padding: 0.5rem 1rem;
+	text-align: center;
+	font-weight: 600;
 }
 
 .expense-item-container:not(:last-of-type) {
@@ -182,6 +189,7 @@ form button {
 	border: none;
 	color: white;
 	border-radius: 0.5rem;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 550px) {
