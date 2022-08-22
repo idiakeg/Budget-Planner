@@ -11,7 +11,7 @@ const Remaining = () => {
 	);
 
 	return (
-		<div className="remaining-conatiner">
+		<div className="budget-detail-container remaining">
 			<span>Remaining: ${budget - totalExpense}</span>
 		</div>
 	);

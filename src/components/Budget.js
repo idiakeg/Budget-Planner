@@ -6,7 +6,7 @@ const Budget = () => {
 		useContext(Context);
 
 	return (
-		<div className="budget-conatiner">
+		<div className="budget-detail-container">
 			{eidtFlag ? (
 				<input
 					type="number"

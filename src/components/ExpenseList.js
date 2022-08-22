@@ -9,7 +9,7 @@ const ExpenseList = () => {
 	const searchParameter = searchText.toLowerCase();
 
 	return (
-		<div>
+		<div className="expense-list-container">
 			{expenses &&
 				expenses
 					.filter(({ name }) => name.toLowerCase().includes(searchParameter))

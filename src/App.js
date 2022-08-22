@@ -11,7 +11,9 @@ function App() {
 	return (
 		<ContextProvider>
 			<div className="container">
-				<header className="header">My Budget Planner</header>
+				<header className="header">
+					<h1>My Budget Planner</h1>
+				</header>
 				<section className="budget-details">
 					<Budget />
 					<Remaining />

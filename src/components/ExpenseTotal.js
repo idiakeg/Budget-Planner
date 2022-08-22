@@ -8,7 +8,7 @@ const ExpenseTotal = () => {
 	const totalExpense = expenses.reduce((acc, cur) => acc + cur.cost, 0);
 
 	return (
-		<div className="expense-total-container">
+		<div className="budget-detail-container expense-total">
 			<span>Spent so far: ${totalExpense}</span>
 		</div>
 	);

@@ -22,41 +22,43 @@ const AddExpenseForm = () => {
 	return (
 		<div className="form-container">
 			<form onSubmit={handleSubmit}>
-				<div className="name-group">
-					<label htmlFor="name">Name</label>
-					<input
-						name="name"
-						type="text"
-						id="name"
-						value={newExpense.name}
-						onChange={(e) =>
-							setNewExpense((prev) => {
-								return {
-									...prev,
-									name: e.target.value,
-								};
-							})
-						}
-						required
-					/>
-				</div>
-				<div className="cost-group">
-					<label htmlFor="cost">Cost</label>
-					<input
-						name="cost"
-						type="number"
-						value={newExpense.cost}
-						id="cost"
-						onChange={(e) =>
-							setNewExpense((prev) => {
-								return {
-									...prev,
-									cost: e.target.value,
-								};
-							})
-						}
-						required
-					/>
+				<div className="input-field">
+					<div className="group">
+						<label htmlFor="name">Name</label>
+						<input
+							name="name"
+							type="text"
+							id="name"
+							value={newExpense.name}
+							onChange={(e) =>
+								setNewExpense((prev) => {
+									return {
+										...prev,
+										name: e.target.value,
+									};
+								})
+							}
+							required
+						/>
+					</div>
+					<div className="group">
+						<label htmlFor="cost">Cost</label>
+						<input
+							name="cost"
+							type="number"
+							value={newExpense.cost}
+							id="cost"
+							onChange={(e) =>
+								setNewExpense((prev) => {
+									return {
+										...prev,
+										cost: e.target.value,
+									};
+								})
+							}
+							required
+						/>
+					</div>
 				</div>
 				<button type="submit">Save</button>
 			</form>
