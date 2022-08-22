@@ -9,7 +9,13 @@ const ExpenseTotal = () => {
 
 	return (
 		<div className="budget-detail-container expense-total">
-			<span>Spent so far: ${totalExpense}</span>
+			<span>
+				Spent so far:{" "}
+				{new Intl.NumberFormat("en-us", {
+					style: "currency",
+					currency: "NGN",
+				}).format(totalExpense)}
+			</span>
 		</div>
 	);
 };

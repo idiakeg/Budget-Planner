@@ -12,7 +12,13 @@ const Remaining = () => {
 
 	return (
 		<div className="budget-detail-container remaining">
-			<span>Remaining: ${budget - totalExpense}</span>
+			<span>
+				Remaining:{" "}
+				{new Intl.NumberFormat("en-us", {
+					style: "currency",
+					currency: "NGN",
+				}).format(budget - totalExpense)}
+			</span>
 		</div>
 	);
 };

@@ -14,7 +14,13 @@ const Budget = () => {
 					onChange={(e) => handleBudgetValueChange(e.target.value)}
 				/>
 			) : (
-				<span>Budget: ${budget}</span>
+				<span>
+					Budget:{" "}
+					{new Intl.NumberFormat("en-us", {
+						style: "currency",
+						currency: "NGN",
+					}).format(budget)}
+				</span>
 			)}
 
 			<button onClick={handleEditFlag}>{!eidtFlag ? "Edit" : "Save"}</button>
