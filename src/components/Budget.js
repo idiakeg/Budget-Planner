@@ -10,7 +10,7 @@ const Budget = () => {
 			{eidtFlag ? (
 				<input
 					type="number"
-					// value={budget}
+					value={budget}
 					onChange={(e) => handleBudgetValueChange(e.target.value)}
 				/>
 			) : (
