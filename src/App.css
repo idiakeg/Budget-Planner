@@ -6,6 +6,7 @@
 	--primary-blue: #5dbee4dc;
 	--border-color: #d8d4d4;
 	--delete-color: #ec3737;
+	--danger-color: #f16e4d;
 }
 
 .container {
@@ -73,6 +74,10 @@ h2 {
 .budget-detail-container.remaining {
 	background-color: var(--primary-green);
 	margin: 0 1rem;
+}
+
+.budget-detail-container.danger {
+	background-color: var(--danger-color);
 }
 
 @media screen and (max-width: 760px) {

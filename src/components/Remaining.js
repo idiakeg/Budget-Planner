@@ -10,8 +10,13 @@ const Remaining = () => {
 		0
 	);
 
+	let identifier =
+		budget - totalExpense >= 0
+			? "budget-detail-container remaining"
+			: "budget-detail-container danger";
+
 	return (
-		<div className="budget-detail-container remaining">
+		<div className={identifier}>
 			<span>
 				Remaining:{" "}
 				{new Intl.NumberFormat("en-us", {
