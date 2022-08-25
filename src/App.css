@@ -131,16 +131,20 @@ h2 {
 }
 
 .expense-item-group {
-	width: 10rem;
+	width: 12rem;
 	margin-left: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
+.edit-btn,
+.delete-btn {
+	cursor: pointer;
+}
+
 .delete-btn {
 	color: var(--delete-color);
-	cursor: pointer;
 }
 
 .cost {

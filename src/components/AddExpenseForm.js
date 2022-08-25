@@ -4,7 +4,8 @@ import { useContext } from "react";
 import Context from "../contexts/Context";
 
 const AddExpenseForm = () => {
-	const { newExpense, setNewExpense, dispatch } = useContext(Context);
+	const { newExpense, setNewExpense, dispatch, editExpense, setEditExpense } =
+		useContext(Context);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -16,7 +17,12 @@ const AddExpenseForm = () => {
 			name: formattedName,
 			cost: Number(newExpense.cost),
 		};
-		dispatch({ type: "ADD_EXPENSE", payload: expense });
+		if (!editExpense) {
+			dispatch({ type: "ADD_EXPENSE", payload: expense });
+		} else {
+			dispatch({ type: "ADD_EXPENSE", payload: expense });
+			setEditExpense(null);
+		}
 
 		setNewExpense({ name: "", cost: "" });
 	};
@@ -62,7 +68,7 @@ const AddExpenseForm = () => {
 						/>
 					</div>
 				</div>
-				<button type="submit">Save</button>
+				<button type="submit">{editExpense ? "Edit" : "Save"}</button>
 			</form>
 		</div>
 	);

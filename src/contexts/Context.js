@@ -23,6 +23,8 @@ export const ContextProvider = ({ children }) => {
 	// USE STATE DEFINITION
 	const [newExpense, setNewExpense] = useState({ name: "", cost: "" });
 
+	const [editExpense, setEditExpense] = useState(null);
+
 	// EVENT HANDLERS
 	const handleEditFlag = () => {
 		dispatch({ type: "CHANGE_EDIT_FLAG" });
@@ -38,6 +40,21 @@ export const ContextProvider = ({ children }) => {
 
 	const handleSearchTextChange = (searchValue) => {
 		dispatch({ type: "SEARCH_EXPENSE", payload: searchValue });
+	};
+
+	const handleEdit = (id) => {
+		// find the item intended for delete
+		const selectedItem = state.expenses.find((expense) => expense.id === id);
+		// filter the current expenses array
+		dispatch({ type: "DELETE_EXPENSE", payload: id });
+
+		// set the editexpense state to be the selected item
+		setEditExpense(selectedItem);
+		// set the values of the name and cost field accordingly
+		setNewExpense({
+			name: selectedItem.name,
+			cost: selectedItem.cost,
+		});
 	};
 
 	// USE EFFECT DEFINITIONS
@@ -63,6 +80,9 @@ export const ContextProvider = ({ children }) => {
 				setNewExpense,
 				searchText: state.searchText,
 				handleSearchTextChange,
+				editExpense,
+				setEditExpense,
+				handleEdit,
 			}}
 		>
 			{children}
