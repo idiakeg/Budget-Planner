@@ -34,6 +34,7 @@ const AddExpenseForm = () => {
 					<div className="group">
 						<label htmlFor="name">Name</label>
 						<input
+							className={editExpense ? "edit-on" : null}
 							name="name"
 							type="text"
 							id="name"
@@ -52,6 +53,7 @@ const AddExpenseForm = () => {
 					<div className="group">
 						<label htmlFor="cost">Cost</label>
 						<input
+							className={editExpense ? "edit-on" : null}
 							name="cost"
 							type="number"
 							value={newExpense.cost}

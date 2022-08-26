@@ -131,7 +131,7 @@ h2 {
 }
 
 .expense-item-group {
-	width: 12rem;
+	width: 10rem;
 	margin-left: auto;
 	display: flex;
 	justify-content: space-between;
@@ -189,6 +189,10 @@ form {
 	outline: none;
 	border: 1px solid var(--border-color);
 	border-radius: 0.5rem;
+}
+
+.group .edit-on {
+	border: 2px solid var(--primary-blue);
 }
 
 form button {
