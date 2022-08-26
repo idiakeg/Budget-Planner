@@ -1,4 +1,4 @@
-import { useReducer, createContext, useState, useEffect } from "react";
+import { useReducer, createContext, useState, useEffect, useRef } from "react";
 import { reducer, initialState } from "../reducers/Reducer";
 
 //CONTEXT DEFINITION / INITIALIZATION
@@ -19,6 +19,9 @@ export const ContextProvider = ({ children }) => {
 			  }
 			: initialState;
 	});
+
+	// USE REF DEFINITIONS
+	const addExpenseSection = useRef(null);
 
 	// USE STATE DEFINITION
 	const [newExpense, setNewExpense] = useState({ name: "", cost: "" });
@@ -55,6 +58,15 @@ export const ContextProvider = ({ children }) => {
 			name: selectedItem.name,
 			cost: selectedItem.cost,
 		});
+
+		scrollToSection(addExpenseSection);
+	};
+
+	const scrollToSection = (section) => {
+		window.scrollTo({
+			top: section.current.offsetTop,
+			behaviour: "smooth",
+		});
 	};
 
 	// USE EFFECT DEFINITIONS
@@ -83,6 +95,7 @@ export const ContextProvider = ({ children }) => {
 				editExpense,
 				setEditExpense,
 				handleEdit,
+				addExpenseSection,
 			}}
 		>
 			{children}
